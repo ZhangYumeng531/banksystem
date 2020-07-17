@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="D:/桌面/第8组银行信息管理系统流程图模块/18044531张雨萌银行账号管理系统/zhangyvmeng/mysql-connector-java-5.1.46.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

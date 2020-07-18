@@ -1,4 +1,4 @@
-package banksystem.model;
+package banksystem;
 
 public class Admin {
 	private String anum;
@@ -30,5 +30,4 @@ public class Admin {
 		this.atelephone = atelephone;
 	}
 	
-
 }

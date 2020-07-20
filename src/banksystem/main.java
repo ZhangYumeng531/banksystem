@@ -9,6 +9,8 @@ public class Main {
 		System.out.println("------------欢迎使用银行管理系统-----------");
 		Login login = new Login();
 		login.Login();
+		//UserRegister userRegister = new UserRegister();
+		//userRegister.userRegister();
 
 	}
 

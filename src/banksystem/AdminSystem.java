@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class AdminSystem {
-	/*public void adminSystem(){
+	public void adminSystem() throws SQLException {
 		System.out.println("*****************************");
 		System.out.println("欢迎管理员！");
 		System.out.println("登陆请输入1");
@@ -13,28 +13,11 @@ public class AdminSystem {
 	    Scanner adminInput = new Scanner(System.in);
 		String adminChange=adminInput.nextLine();
 		System.out.println("*****************************");
-		if(adminChange.equals(1)){
-			System.out.println("欢迎登陆");
-		}if(adminChange.equals(2)){
-			System.out.println("欢迎进入找回密码");
-		}if(adminChange.equals("quit")){
-			System.out.println("反回上一级");
-			Main main =new Main();
-		}
-	}*/
-	public void adminSystem() throws SQLException {
-		Scanner adminInput = new Scanner(System.in);
-		 System.out.println("登录请输入1");
-		 System.out.println("找回密码请输入2");
-		 System.out.println("修改密码请输入3");
-		 //System.out.println("进入管理员管理请输入4");
-		 System.out.println("返回上一级请输入quit");
-		 String adminChange = adminInput.nextLine();
 		 System.out.println(adminChange);
 		 if(adminChange.equals("1")) {
-			 //用户登录
-			 UserLogin userLogin = new UserLogin();
-			 userLogin.userLogin();
+			 //管理员登录
+			 AdminLogin adminLogin = new AdminLogin();
+			 adminLogin.adminLogin(adminChange, adminChange);
 		 }else if(adminChange.equals("2")) {
 			 //找回密码
 			 

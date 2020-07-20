@@ -19,6 +19,8 @@ public void userSystem() throws SQLException {
 		 userLogin.userLogin();
 	 }else if(adminChange.equals("2")) {
 		 //ÓÃ»§×¢²á
+		 UserRegister userRegister = new UserRegister();
+		 userRegister.userRegister();
 		 
 	 }else if(adminChange.equals("3")) {
 		 //ÕÒ»ØÃÜÂë

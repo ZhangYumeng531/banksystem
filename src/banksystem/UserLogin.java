@@ -1,4 +1,7 @@
 package banksystem;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -7,6 +10,7 @@ public class UserLogin {
 		 Scanner userInput = new Scanner(System.in);
 		 User user = new User();
 		 System.out.println("欢迎进入用户登录");
+		 
 		 System.out.println("请输入账号：");
 		 user.setNum(userInput.nextLine().trim());
 		 int num=0;

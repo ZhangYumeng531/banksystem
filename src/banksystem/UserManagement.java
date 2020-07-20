@@ -28,8 +28,10 @@ public class UserManagement {
 			 //转账
 			
 		 }else if(adminChange.equals("4")) {
-			 //余额查询
-			 
+			//余额查询
+			 UserBalance userBalance = new UserBalance();
+			 userBalance.userBalance();
+
 		 }else if(adminChange.equals("5")) {
 			 //查看转账记录
 			 UserTransferaccounts userTransferaccounts = new UserTransferaccounts();

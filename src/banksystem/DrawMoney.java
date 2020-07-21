@@ -1,55 +1,54 @@
 package banksystem;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
-
+import java.math.BigDecimal;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.StatementImpl;
-
-public class UserChangePassword {
-
-	public int userChangePassword() throws SQLException{
+public class DrawMoney {
+	public void drawMoney()throws SQLException{
 		// TODO Auto-generated method stub
 		Scanner userInput = new Scanner(System.in);
-		System.out.println("---------修改密码--------");
-		System.out.println("请输入您要进行修改密码的账号：");
+		System.out.println("---------取款--------");
+		System.out.println("请输入您要进行取款的账号：");
 		String userNum = userInput.nextLine();
-		System.out.println("请输入新密码：");
-		String usernewpassword = userInput.nextLine();
+		System.out.println("请输入取款金额：");
+		BigDecimal usernewbalance = userInput.nextBigDecimal();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			//数据库连接
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bank_sm","root","root");
 			// 4.定义sql语句
 			//String sql = "select count(*) from user where Num = ?";
-			String sql = "update user set password=? where Num = ?";
+			String sql = "update user set balance=balance-? where Num = ?";
 			// 获取获取sql语句的对象
 			PreparedStatement ps = (PreparedStatement) con.prepareStatement(sql);
-		    ps.setString(1, usernewpassword);
+		    ps.setBigDecimal(1, usernewbalance);
 		    ps.setString(2, userNum);
 			 //执行sql语句
 		    int res = ps.executeUpdate();
 
 			//判断
 		    if(res==1){
-					System.out.println("密码修改成功");
-					UserSystem userSystem=new UserSystem();
-					userSystem.userSystem();
-					
+		    
+					System.out.println("取款成功");
+					UserManagement userManagement=new UserManagement();
+					userManagement.userManagement();
 				}else{
-					System.err.println("密码修改失败请重新操作");
-					UserSystem userSystem=new UserSystem();
-					userSystem.userSystem();
+					System.err.println("取款失败,请重新交易：");
+					UserManagement userManagement=new UserManagement();
+					userManagement.userManagement();
 				}
 		
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return 0;
+		//return 0;
 	}
 
-}
 
+}

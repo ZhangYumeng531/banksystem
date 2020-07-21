@@ -36,6 +36,9 @@ public class UserBalance {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		UserManagement userManagement=new UserManagement();
+		userManagement.userManagement();
+
 	
 
 	}

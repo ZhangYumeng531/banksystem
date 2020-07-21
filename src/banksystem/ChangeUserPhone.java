@@ -34,9 +34,13 @@ public class ChangeUserPhone {
 
 			//判断
 		    if(res==1){
-					System.out.println("成功");
+					System.out.println("用户手机号修改成功");
+					ChangeUserInfo changeUserInfo=new ChangeUserInfo();
+					 changeUserInfo.changeUserInfo();
 				}else{
-					System.out.println("失败");
+					System.err.println("用户手机号修改失败,请重新修改：");
+					ChangeUserInfo changeUserInfo=new ChangeUserInfo();
+					 changeUserInfo.changeUserInfo();
 				}
 		
 		} catch (ClassNotFoundException e) {

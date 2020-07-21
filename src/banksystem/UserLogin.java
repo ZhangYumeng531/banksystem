@@ -36,14 +36,14 @@ public class UserLogin {
 					System.out.println("请输入密码：");
 					String userPassword = userInput.nextLine();
 					if(res.getString(3).equals(userPassword)){
-						if(res.getString(6).equals(1)){
+						if(res.getString(6).equals("1")){
 							System.out.println("8登陆成功");
-						AdminManagement adminManagement=new AdminManagement();
-						adminManagement.adminManagement();
+							UserManagement userManagement=new UserManagement();
+							userManagement.userManagement();
 						}else{
-							System.err.println("该账号已被冻结无法登录，即将返回上一级");
+							System.err.println("该账号已被冻结或挂失无法登录，即将返回上一级");
 							UserSystem userSystem = new UserSystem();
-							userSystem.userSystem();
+							userSystem.userSystem();	
 						}
 						
 					}

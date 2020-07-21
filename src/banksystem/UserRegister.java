@@ -113,6 +113,8 @@ public class UserRegister {
 			int res =ps.executeUpdate();
 			if(res!=0){
 				System.out.println("注册成功跳转登录页面......");
+				UserLogin userLogin=new UserLogin();
+				userLogin.userLogin(ac, ac);
 			}else{
 				System.out.println("注册失败返回上一级......");
 				UserSystem userSystem=new UserSystem();

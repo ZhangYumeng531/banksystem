@@ -29,23 +29,25 @@ public class AdminLogin {
 				st.setString(1, adminAnum);
 				ResultSet res =st.executeQuery();
 				if(res.next()){
-					System.out.println("请输入密码密码：");
+					System.out.println("请输入密码：");
 					String adminApassword = adminInput.nextLine();
 					if(res.getString(3).equals(adminApassword)){
-						System.out.println("8登陆成功");
-						AdminManagement adminManagement=new AdminManagement();
-						adminManagement.adminManagement();
-					
-					}else{
-						System.err.println("密码错误，请重新登录;");
-						AdminSystem adminSystem = new AdminSystem();
-						adminSystem.adminSystem();						
+						if(res.getString(5).equals("1")){
+							System.out.println("8登陆成功");
+							AdminManagement adminManagement=new AdminManagement();
+							adminManagement.adminManagement();
+						}else{
+							System.err.println("该账号已被禁用无法登录，即将返回上一级");
+							AdminSystem adminSystem = new AdminSystem();
+							adminSystem.adminSystem();	
+						}
+						
 					}
-					
 					}else{
 						System.err.println("该账号不存在，返回上一级");
 						AdminSystem adminSystem = new AdminSystem();
-						adminSystem.adminSystem();						
+						adminSystem.adminSystem();	
+
 						
 					}
 			//con.close();

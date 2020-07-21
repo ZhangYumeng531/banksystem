@@ -1,5 +1,4 @@
 package banksystem;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,14 +8,14 @@ import java.util.Scanner;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.StatementImpl;
 
-public class UserAccountUnfreezing {
-	public int userAccountUnfreezing()throws SQLException{
+public class ReportLoss {
+	public int reportLoss()throws SQLException{
 		// TODO Auto-generated method stub
 		Scanner userInput = new Scanner(System.in);
-		System.out.println("---------解冻账户--------");
-		System.out.println("请输入您要进行解冻操作的账号：");
+		System.out.println("---------挂失--------");
+		System.out.println("请输入您的账号：");
 		String userNum = userInput.nextLine();
-		System.out.println("解冻该账号请输入“1”：");
+		System.out.println("若挂失请输入“0”：");
 		String usernewquanxian = userInput.nextLine();
 		
 		try {
@@ -34,22 +33,22 @@ public class UserAccountUnfreezing {
 		    int res = ps.executeUpdate();
 
 			//判断
-		    if(res==1&&usernewquanxian.equals("1")){
-					System.out.println("解冻成功");
-					ChangeUserInfo changeUserInfo=new ChangeUserInfo();
-					changeUserInfo.changeUserInfo();
-				}else if(res!=1&&usernewquanxian.equals("1")){
-					System.err.println("账号或密码错误解冻失败，请返回重试");
-					ChangeUserInfo changeUserInfo=new ChangeUserInfo();
-					changeUserInfo.changeUserInfo();
+		    if(res==1&&usernewquanxian.equals("0")){
+					System.out.println("挂失成功");
+					UserManagement userManagement=new UserManagement();
+					userManagement.userManagement();
+				}else if(res!=1&&usernewquanxian.equals("0")){
+					System.err.println("账号或密码错误挂失失败，请返回重试");
+					UserManagement userManagement=new UserManagement();
+					userManagement.userManagement();
 				}else if(res==1){
-					System.err.println("解冻只能输入（ 1）解冻失败，请返回重试");
-					ChangeUserInfo changeUserInfo=new ChangeUserInfo();
-					changeUserInfo.changeUserInfo();
+					System.err.println("挂失只能输入（ 0）挂失失败，请返回重试");
+					UserManagement userManagement=new UserManagement();
+					userManagement.userManagement();
 				}else{
-					System.err.println("账号或密码错误，解冻只能输入（ 1）解冻失败，请返回重试");
-					ChangeUserInfo changeUserInfo=new ChangeUserInfo();
-					changeUserInfo.changeUserInfo();
+					System.err.println("账号或密码错误，挂失只能输入（ 0）挂失失败，请返回重试");
+					UserManagement userManagement=new UserManagement();
+					userManagement.userManagement();
 				}
 		
 		

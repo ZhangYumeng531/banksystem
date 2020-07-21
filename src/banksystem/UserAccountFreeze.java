@@ -33,11 +33,11 @@ public class UserAccountFreeze {
 		    int res = ps.executeUpdate();
 
 			//≈–∂œ
-		    if(res==1&&usernewquanxian.equals(0)){
+		    if(res==1&&usernewquanxian.equals("0")){
 					System.out.println("∂≥Ω·≥…π¶");
 					ChangeUserInfo changeUserInfo=new ChangeUserInfo();
 					changeUserInfo.changeUserInfo();
-				}else if(res!=1&&usernewquanxian.equals(0)){
+				}else if(res!=1&&usernewquanxian.equals("0")){
 					System.err.println("’À∫≈ªÚ√‹¬Î¥ÌŒÛ∂≥Ω· ß∞‹£¨«Î∑µªÿ÷ÿ ‘");
 					ChangeUserInfo changeUserInfo=new ChangeUserInfo();
 					changeUserInfo.changeUserInfo();

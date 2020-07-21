@@ -30,9 +30,13 @@ public class AdminDelete {
 
 			//判断
 		    if(res==1){
-					System.out.println("成功");
+					System.out.println("删除管理员成功");
+					AdminManagement adminManagement = new AdminManagement();
+					 adminManagement.adminManagement();
 				}else{
-					System.out.println("失败");
+					System.err.println("删除管理员失败,请重新操作：");
+					AdminManagement adminManagement = new AdminManagement();
+					 adminManagement.adminManagement();
 				}
 		
 		} catch (ClassNotFoundException e) {

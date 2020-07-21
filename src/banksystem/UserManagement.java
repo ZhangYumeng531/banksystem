@@ -12,9 +12,8 @@ public class UserManagement {
 		 System.out.println("查看转账记录请输入5");
 		 System.out.println("查看存款记录请输入6");
 		 System.out.println("查看取款记录请输入7");
-		 System.out.println("开户请输入8");
-		 System.out.println("销户请输入9");
-		 System.out.println("挂失请输入10");
+		 System.out.println("销户请输入8");
+		 System.out.println("挂失请输入9");
 		 System.out.println("返回上一级请输入quit");
 		 String adminChange = userInput.nextLine();
 		 System.out.println(adminChange);
@@ -45,12 +44,11 @@ public class UserManagement {
 			 UserWithdrawRecords userWithdrawRecords = new UserWithdrawRecords();
 			 userWithdrawRecords.userWithdrawRecords();
 		 }else if(adminChange.equals("8")) {
-			 //开户
+			 //销户
+			 UserDelete userDelete = new UserDelete();
+			 userDelete.userDelete();
 			 
 		 }else if(adminChange.equals("9")) {
-			 //销户
-			 
-		 }else if(adminChange.equals("10")) {
 			 //挂失
 			 
 		 }else if(adminChange.equals("quit")) {
@@ -58,7 +56,7 @@ public class UserManagement {
 			 UserSystem userSystem = new UserSystem();
 			 userSystem.userSystem();
 		 }else {
-			 System.err.println("请做出正确的输入");
+			 System.err.println("请做出正确的输入:");
 			 userManagement();
 		 }
 	    }

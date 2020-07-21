@@ -20,10 +20,12 @@ public class AdminSystem {
 			 adminLogin.adminLogin(adminChange, adminChange);
 		 }else if(adminChange.equals("2")) {
 			 //找回密码
-			 
+			 AdminFindPassword adminFindPassword=new AdminFindPassword();
+			 adminFindPassword.adminFindPassword();
 		 }else if(adminChange.equals("3")) {
 			 //修改密码
-			
+			 AdminChangePassword adminChangePassword = new AdminChangePassword();
+			 adminChangePassword.adminChangePassword();
 		 }/*else if(adminChange.equals("4")) {
 			 //账户管理
 			 UserManagement userManagement = new UserManagement();

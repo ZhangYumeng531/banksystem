@@ -16,7 +16,7 @@ public void userSystem() throws SQLException {
 	 if(adminChange.equals("1")) {
 		 //用户登录
 		 UserLogin userLogin = new UserLogin();
-		 userLogin.userLogin();
+		 userLogin.userLogin(adminChange, adminChange);
 	 }else if(adminChange.equals("2")) {
 		 //用户注册
 		 UserRegister userRegister = new UserRegister();
@@ -27,6 +27,8 @@ public void userSystem() throws SQLException {
 		 
 	 }else if(adminChange.equals("4")) {
 		 //修改密码
+		 UserChangePassword userChangePassword = new UserChangePassword();
+		 userChangePassword.userChangePassword();
 		
 	 }else if(adminChange.equals("5")) {
 		 //账户管理
